@@ -51,6 +51,7 @@ find_package(catkin REQUIRED COMPONENTS
  add_message_files(
    FILES
    pos_usuario.msg
+   inf_personal_usuario.msg
 #   Message2.msg
  )
 
@@ -136,8 +137,12 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/interaccion_node.cpp)
 add_executable(posicion_usuario_nodo src/posicion_usuario_nodo.cpp)
+add_executable(emocion_usuario_nodo src/emocion_usuario_nodo.cpp)
+add_executable(informacion_personal_nodo src/informacion_personal_nodo.cpp)
 
 add_dependencies(posicion_usuario_nodo interaccion_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
+add_dependencies(emocion_usuario_nodo interaccion_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
+add_dependencies(informacion_personal_nodo interaccion_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -155,6 +160,12 @@ add_dependencies(posicion_usuario_nodo interaccion_generate_messages_cpp ${catki
 # )
 
 target_link_libraries(posicion_usuario_nodo
+    ${catkin_LIBRARIES}
+)
+target_link_libraries(emocion_usuario_nodo
+    ${catkin_LIBRARIES}
+)
+target_link_libraries(informacion_personal_nodo
     ${catkin_LIBRARIES}
 )
 
