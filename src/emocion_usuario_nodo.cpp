@@ -11,8 +11,6 @@ int main(int argc, char **argv)
 
    ros::Publisher emocion_pub = nodo.advertise<std_msgs::String>("emocion_topic",0);
 
-   ros::Duration seconds_sleep(1);
-
 
    while (ros::ok()){
 
@@ -20,7 +18,7 @@ int main(int argc, char **argv)
 
        std::string input;
 
-       std::cout << "Introduzca su emoción expresada: " << "\n";
+       std::cout << "Introduzca su emocion expresada: " << "\n";
        std::cin >> input;
 
        msg.data = input;
@@ -28,9 +26,6 @@ int main(int argc, char **argv)
        emocion_pub.publish(msg);
 
        ros::spinOnce();
-
-       seconds_sleep.sleep();
-
    }
 
    return 0;
