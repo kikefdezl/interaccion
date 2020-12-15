@@ -13,8 +13,6 @@ int main(int argc, char **argv)
 
     ros::Publisher informacion_pub = nodo.advertise<interaccion::inf_personal_usuario>("inf_pers_topic", 0);
 
-    ros::Duration seconds_sleep(1);
-
     int x;
     std::string a;
     int i;
@@ -49,8 +47,6 @@ int main(int argc, char **argv)
        informacion_pub.publish(infoAEnviar);
 
        ros::spinOnce();
-
-       seconds_sleep.sleep();
     }
     return 0;
 }
