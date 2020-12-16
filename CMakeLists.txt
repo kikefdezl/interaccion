@@ -53,15 +53,13 @@ find_package(catkin REQUIRED COMPONENTS
    pos_usuario.msg
    inf_personal_usuario.msg
    usuario.msg
-#   Message2.msg
  )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(
+   FILES
+   multiplicador.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -186,6 +184,7 @@ target_link_libraries(dialogo_nodo
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
   scripts/empaquetador_nodo.py
+  scripts/matematico_nodo.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
