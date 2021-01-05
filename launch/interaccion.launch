@@ -10,4 +10,6 @@
 
 <node pkg="interaccion" name="posicion_usuario_nodo" type="posicion_usuario_nodo" output="screen" launch-prefix="xterm -e"/>
 
+<node pkg="interaccion" name="matematico_nodo" type="matematico_nodo.py" output="screen" launch-prefix="xterm -e"/>
+
 </launch>

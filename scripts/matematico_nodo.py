@@ -10,7 +10,7 @@ def multiply(req):
 
 def multiply_server():
     rospy.init_node('matematico_nodo')
-    s = rospy.Service('multiplicador', multiplicador, multiply)
+    s = rospy.Service('servicio_multiplicador', multiplicador, multiply)
     rospy.loginfo("Listo para multiplicar...")
     rospy.spin()
 
