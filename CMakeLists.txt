@@ -139,11 +139,13 @@ add_executable(posicion_usuario_nodo src/posicion_usuario_nodo.cpp)
 add_executable(emocion_usuario_nodo src/emocion_usuario_nodo.cpp)
 add_executable(informacion_personal_nodo src/informacion_personal_nodo.cpp)
 add_executable(dialogo_nodo src/dialogo_nodo.cpp)
+add_executable(reloj_nodo src/reloj_nodo.cpp)
 
 add_dependencies(posicion_usuario_nodo interaccion_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
 add_dependencies(emocion_usuario_nodo interaccion_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
 add_dependencies(informacion_personal_nodo interaccion_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
 add_dependencies(dialogo_nodo interaccion_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
+add_dependencies(reloj_nodo interaccion_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -170,6 +172,9 @@ target_link_libraries(informacion_personal_nodo
     ${catkin_LIBRARIES}
 )
 target_link_libraries(dialogo_nodo
+    ${catkin_LIBRARIES}
+)
+target_link_libraries(reloj_nodo
     ${catkin_LIBRARIES}
 )
 
