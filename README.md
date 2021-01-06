@@ -19,7 +19,7 @@ $ sudo apt-get install xterm
 
 First run all nodes (f.e. with roslaunch). Then:
 ```
-$ roscd
+$ cd
 $ mkdir bagfiles
 $ cd bagfiles
 $ rosbag record -a
