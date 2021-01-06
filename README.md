@@ -1,6 +1,11 @@
 # interaccion
 
-
+Make python scripts executable:
+```
+roscd interaccion
+cd scripts
+chmod +x *.py
+```
 To run all nodes simultaneously(must have xterm installed):
 ```
 $ roslaunch interaccion interaccion.launch
@@ -10,12 +15,7 @@ To install xterm:
 $ sudo apt-get install xterm
 ```
 
-Make python scripts executable:
-```
-roscd interaccion
-cd scripts
-chmod +x *.py
-```
+# Making a rosbag
 
 To make a rosbag for quicker debugging:
 
