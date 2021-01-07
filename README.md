@@ -75,7 +75,7 @@ roscore
 ```
 In the second terminal:
 ```
-rosrun blindbuy tts.py
+rosrun interaccion tts.py
 ```
 And in the third terminal:
 ```
