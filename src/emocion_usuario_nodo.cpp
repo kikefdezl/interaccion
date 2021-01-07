@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 
        std::string input;
 
-       std::cout << "Introduzca su emocion expresada: " << "\n";
+       std::cout << "Introduzca su emoción expresada: " << "\n";
        std::cin >> input;
 
        msg.data = input;

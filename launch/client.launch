@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="interaccion" name="informacion_personal_nodo" type="informacion_personal_nodo" output="screen" launch-prefix="xterm -e"/>
+
+    <node pkg="interaccion" name="emocion_usuario_nodo" type="emocion_usuario_nodo" output="screen" launch-prefix="xterm -e"/>
+
+    <node pkg="interaccion" name="posicion_usuario_nodo" type="posicion_usuario_nodo" output="screen" launch-prefix="xterm -e"/>
+
+</launch>

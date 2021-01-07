@@ -20,8 +20,8 @@ public:
         {
             cout << msg->infPersonal.idiomas.at(i) << endl;
         }
-        cout << "La emocion del usuario es: " << msg->emocion << endl;
-        cout << "El usuario se encuentra en la posicion x: " << unsigned(msg->posicion.x) << "  y: " << unsigned(msg->posicion.y) << "  z: " << unsigned(msg->posicion.z) << endl;
+        cout << "La emoción del usuario es: " << msg->emocion << endl;
+        cout << "El usuario se encuentra en la posición x: " << unsigned(msg->posicion.x) << "  y: " << unsigned(msg->posicion.y) << "  z: " << unsigned(msg->posicion.z) << endl;
 
         ros::ServiceClient client = nodo.serviceClient<interaccion::multiplicador>("servicio_multiplicador");
         interaccion::multiplicador srv;
