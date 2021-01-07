@@ -67,3 +67,17 @@ pip3 install gTTS
 ```
 pip3 install playsound
 ```
+
+## Test Text-to-Speech
+Run in one terminal:
+```
+roscore
+```
+In the second terminal:
+```
+rosrun blindbuy tts.py
+```
+And in the third terminal:
+```
+rostopic pub /speech std_msgs/String "Hola. Esto es una prueba de síntesis de voz"
+```
