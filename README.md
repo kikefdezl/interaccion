@@ -81,3 +81,5 @@ And in the third terminal:
 ```
 rostopic pub /speech std_msgs/String "Hola. Esto es una prueba de síntesis de voz"
 ```
+
+## [Run nodes from different computers](https://www.youtube.com/watch?v=Y4yRNOQXD5I&t=176s)
