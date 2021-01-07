@@ -38,10 +38,6 @@ $rosbag play "bagfile".bag -r 20
 ## [Make ROS Melodic compatible with Python 3](https://dhanoopbhaskar.com/blog/2020-05-07-working-with-python-3-in-ros-kinetic-or-melodic/)
 > If ROS needs to support python3 we may have to recompile ROS source code using python3 which is not practical. So what we can do is to run python3 programs, separately and connect using ROS bridge (if we use custom messages (ROS msg)). However, if we are not using any custom rosmsg and using only built-in rosmsg, we can do the following steps to run python3 codes in ROS (without using a ROS bridge).
 
-Install ROS (here I install Melodic)
-```
-sudo apt install ros-melodic-desktop-full
-```
 After installing ROS, install rospkg for python3
 ```
 sudo apt install python3-pip python3-all-dev python3-rospkg
