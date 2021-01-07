@@ -87,7 +87,12 @@ Check local ip:
 ```
 ifconfig
 ```
-Add in ~/.bashrc:
+Add in ~/.bashrc (master):
+```
+export ROS_MASTER_URI=http://192.168.1.42:1131
+export ROS_HOSTNAME=192.168.1.42
+```
+(client):
 ```
 export ROS_MASTER_URI=http://192.168.1.42:1131
 export ROS_HOSTNAME=192.168.1.52
