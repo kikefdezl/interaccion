@@ -83,3 +83,13 @@ rostopic pub /speech std_msgs/String "Hola. Esto es una prueba de síntesis de v
 ```
 
 ## [Run nodes from different computers](https://www.youtube.com/watch?v=Y4yRNOQXD5I)
+Check local ip:
+```
+ifconfig
+```
+Add in ~/.bashrc:
+```
+export ROS_MASTER_URI=http://192.168.1.42:1131
+export ROS_HOSTNAME=192.168.1.52
+```
+
