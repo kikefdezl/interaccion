@@ -17,7 +17,7 @@ $ sudo apt-get install xterm
 
 # Recording and playing with Rosbag (for quicker debugging)
 
-First run all nodes (f.e. with roslaunch). Then:
+First run ONLY the nodes inf_personal_nodo, pos_usuario_nodo, emocion_nodo. Then:
 ```
 $ cd
 $ mkdir bagfiles
