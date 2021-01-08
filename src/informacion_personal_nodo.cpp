@@ -22,7 +22,7 @@ int main(int argc, char **argv)
        interaccion::inf_personal_usuario infoAEnviar;
        infoAEnviar.idiomas.clear();
 
-       std::cout <<"Introduzca su nombre: " << "\n";
+       std::cout <<"Intruduzca su nombre: " << "\n";
        std::cin >> a;
 
        infoAEnviar.nombre = a;
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 
        infoAEnviar.edad = x;
 
-       std::cout <<"¿Cuántos idiomas habla?: " << "\n";
+       std::cout <<"¿Cuantos idiomas habla?: " << "\n";
        std::cin >> i;
 
 
