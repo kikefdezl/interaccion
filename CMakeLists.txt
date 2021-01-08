@@ -190,7 +190,6 @@ target_link_libraries(reloj_nodo
 catkin_install_python(PROGRAMS
   scripts/empaquetador_nodo.py
   scripts/matematico_nodo.py
-  scripts/tts.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
