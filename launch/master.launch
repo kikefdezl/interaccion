@@ -9,7 +9,4 @@
 
     <node pkg="interaccion" name="reloj_nodo" type="reloj_nodo" output="screen" launch-prefix="xterm -e"/>
     
-    <node pkg="interaccion" name="tts" type="tts.py" output="screen" launch-prefix="xterm -e"/>
-    
-
 </launch>
