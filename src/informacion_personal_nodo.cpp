@@ -8,20 +8,22 @@
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "informacion_personal_nodo");
-    ros::NodeHandle nodo;
+    ros::init(argc, argv, "informacion_personal_nodo"); //incicializacion del nodo informacion_personal_nodo
+    ros::NodeHandle nodo; //declaracion del NodeHandle
 
-    ros::Publisher informacion_pub = nodo.advertise<interaccion::inf_personal_usuario>("inf_pers_topic", 0);
+    ros::Publisher informacion_pub = nodo.advertise<interaccion::inf_personal_usuario>("inf_pers_topic", 0); //creacion del publicador con el topic inf_pers_topic
 
-    int x;
+    //variables para almacenar la informacion
+    int x; 
     std::string a;
     int i;
     std::string id;
 
     while (ros::ok()){
-       interaccion::inf_personal_usuario infoAEnviar;
-       infoAEnviar.idiomas.clear();
+       interaccion::inf_personal_usuario infoAEnviar;   //se crea el objeto inf_personal_usuario 
+       infoAEnviar.idiomas.clear(); //se vacia el vector idiomas en cada iteracion
 
+       //se pide introducir la informacion por terminal 
        std::cout <<"Intruduzca su nombre: " << "\n";
        std::cin >> a;
 
@@ -36,7 +38,7 @@ int main(int argc, char **argv)
        std::cin >> i;
 
 
-
+       //bucle para introducir tantos idiomas como se han indicado 
        for (int j = 0; j < i; j++){
            std::cout <<"Introduzca los idiomas que habla: " << "\n";
            std::cin >> id;
@@ -44,7 +46,7 @@ int main(int argc, char **argv)
        }
 
 
-       informacion_pub.publish(infoAEnviar);
+       informacion_pub.publish(infoAEnviar);    //publicacion del mensaje
 
        ros::spinOnce();
     }
