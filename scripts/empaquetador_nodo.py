@@ -17,7 +17,7 @@ class packager:
     self.emocion_usuario_sub = rospy.Subscriber("emocion_topic",String,self.callback_emocion_usuario)
     self.posicion_usuario_sub = rospy.Subscriber("pos_usuario_topic",pos_usuario,self.callback_posicion_usuario)
 
-    #Se crean atributos de la clase de los tipos de mensaje que el nodo envía y recibe
+    #Se crean atributos de la clase de los tipos de mensaje que el nodo envia y recibe
     self.informacion_personal=inf_personal_usuario()
     self.emocion_usuario=String()
     self.posicion_usuario=pos_usuario()
@@ -39,7 +39,7 @@ class packager:
     rospy.loginfo(data)
 
   def package(self):
-  #Metodo principal de la clase. Se espera hasta que se ha publicado en todos los topics y se envía el mensaje en "user_topic"
+  #Metodo principal de la clase. Se espera hasta que se ha publicado en todos los topics y se envia el mensaje en "user_topic"
 
     if self.informacion_personal.nombre and self.emocion_usuario.data and self.posicion_usuario.x:
     #Comprobamos si ya se ha publicado en los topics verificando si el atributo de la clase esta vacio. En el caso de "emocion_usuario" y
