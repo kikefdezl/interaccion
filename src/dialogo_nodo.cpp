@@ -13,7 +13,7 @@ class Listener {
 public:
     void funcionCallback(const interaccion::usuario::ConstPtr& msg){
 
-        //imprimimos por pantalla la informacion del mensaje usuario.msg
+        //imprimimos por pantalla y anadimos al comando de espeak la informacion del mensaje usuario.msg
         cout << "Nombre del usuario: " << msg->infPersonal.nombre << endl;
         texto = "";
         texto.append("El nombre del usuario es " + msg->infPersonal.nombre);
