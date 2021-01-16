@@ -15,19 +15,29 @@ public:
 
         //imprimimos por pantalla la informacion del mensaje usuario.msg
         cout << "Nombre del usuario: " << msg->infPersonal.nombre << endl;
+        texto = "";
+        texto.append("El nombre del usuario es " + msg->infPersonal.nombre);
         cout << "Edad del usuario: " << unsigned(msg->infPersonal.edad) << endl;
+        texto.append("  . La edad del usuario es " + to_string(msg->infPersonal.edad));
         cout << "El usuario habla los siguientes idiomas:" << endl;
+        texto.append("  . El usuario habla ");
         for(int i = 0; i< msg->infPersonal.idiomas.size(); i++)
         {
             cout << msg->infPersonal.idiomas.at(i) << endl;
+            texto.append(" . " + msg->infPersonal.idiomas.at(i));
         }
         cout << "La emoción del usuario es: " << msg->emocion << endl;
+        texto.append("   . La emocion del usuario es " + msg->emocion);
         cout << "El usuario se encuentra en la posicion x: " << unsigned(msg->posicion.x) << "  y: " << unsigned(msg->posicion.y) << "  z: " << unsigned(msg->posicion.z) << endl;
+        texto.append("  . El usuario se encuentra en la posicion " + to_string(msg->posicion.x));
+        texto.append(" . " + to_string(msg->posicion.y));
+        texto.append(" . " + to_string(msg->posicion.z));
 
         interaccion::multiplicador srv;     //declaramos un mensaje/servicio de tipo multiplicador
         srv.request.entrada = msg->infPersonal.edad;        //establecemos la entrada del mensaje como la edad del usuario
         client.call(srv);       //llamada al servicio
         cout << "El doble de la edad es: " << srv.response.resultado << endl;       //se imprime por la pantalla el resultado (el doble de la edad)
+        texto.append("   . El doble de su edad es " + to_string(srv.response.resultado));
 
         //publicamos mensaje para iniciar o resetear el temporizador de reloj_nodo. Si es la primera vez, se publica en start_topic, y se repite se publica en reset_topic
         std_msgs::String text;
@@ -41,12 +51,16 @@ public:
         }
 
         //sintetizamos el texto con espeak
+        command = "espeak -v es \"" + texto + "\"";
         system(command.c_str());
     }
 
     //la segunda funcion callback escucha al topic still_alive y el recibir el mensaje imprime que el temporizador sigue activo
     void functionCallback2(const std_msgs::Bool::ConstPtr& msg){
-        cout << "El temporizador sigue activo." << endl;
+        texto = "El temporizador sigue activo.";
+        cout << texto << endl;
+        command = "espeak -v es \"" + texto + "\"";
+        system(command.c_str());
     }
 
 private:
@@ -56,8 +70,7 @@ private:
     ros::Publisher publicadorStart = nodo.advertise<std_msgs::String>("start_topic", 0);        //declaramos un publicador que manda el mensaje de inicio al reloj_nodo
     ros::Publisher publicadorReset = nodo.advertise<std_msgs::String>("reset_topic", 0);        //declaramos un publicador que manda el mensaje de reseteo al reloj_nodo
 
-    string texto = "Este es el texto a sintetizar";     //declaracion del texto a ser sintetizado por espeak
-    string command = "espeak -v es \"" + texto + "\"";      //declaracion del comando a sistema para sintetizar el texto con espeak
+    string texto, command = "";     //declaracion del texto a ser sintetizado por espeak
 };
 
 int main(int argc, char **argv){
